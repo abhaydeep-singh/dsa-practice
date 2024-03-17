@@ -43,22 +43,13 @@ void print(Node *&head){
     {
         cout<<temp->data<<" ";
         temp=temp->next;
-    }
-    cout<<endl;    
+    }    
 }
 
 void insertAtStart(Node *&head, int data){
     //create new node
-    Node *temp_node = new Node(data); // class Node(jo ekk node ko represent karti hai), uske constructor ka use karke node bana dia
-    temp_node->next = head; //head(exsisting LL ka head) ko point kar dia new node(tempnode) ke NEXT mein
-    head = temp_node; // ?
-}
-
-void insertAtEnd(Node *&tail,int data){
-    //create new node
-    Node *temp_node = new Node(data);
-    tail->next = temp_node; // new node(tempnode) ka head point kar dia last node(tail) ke NEXt mein
-    tail = temp_node; // ?
+    Node *temp_node=new Node(data); // class Node(jo ekk node ko represent karti hai), uske constructor ka use karke node bana dia
+    temp_node->next=head; //head(exsisting LL ka head) ko point kar dia new node(tempnode) ke NEXT mein
 }
 
 int main(){
@@ -71,13 +62,9 @@ int main(){
 // create a node using
     Node *node1 = new Node(10); //initial node
     // pointing head of node1 in head
-    Node *head = node1; 
-    Node *tail = node1;
-    print(head);
-    // insertAtStart(head,20);
-    insertAtEnd(tail,69);
-    insertAtEnd(tail,420);
-    print(head);
+    Node *head=node1; 
+    cout<<"node1: "<<&node1<<endl;
+    insertAtStart(head,20);
 
     return 0;
 }
